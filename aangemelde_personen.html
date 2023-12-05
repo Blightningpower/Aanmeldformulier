@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aangemelde Personen</title>
+</head>
+<body>
+    <h2>Aangemelde Personen:</h2>
+    <ul id="aangemeldePersonenList"></ul>
+    <script>
+        const aangemeldePersonen = JSON.parse(localStorage.getItem('aangemeldePersonen')) || [];
+        const listElement = document.getElementById('aangemeldePersonenList');
+        
+        aangemeldePersonen.forEach(naam => {
+            const listItem = document.createElement('li');
+            listItem.textContent = naam;
+            listElement.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

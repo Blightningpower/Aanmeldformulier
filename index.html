@@ -7,10 +7,20 @@
 </head>
 <body>
     <h1>Aanmelden</h1>
-    <form action="verwerk_aanmelding.php" method="post">
+    <form onsubmit="handleFormSubmit(event)">
         <label for="naam">Naam:</label>
         <input type="text" id="naam" name="naam" required>
         <button type="submit">Aanmelden</button>
     </form>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const naam = document.getElementById('naam').value;
+            let aangemeldePersonen = JSON.parse(localStorage.getItem('aangemeldePersonen')) || [];
+            aangemeldePersonen.push(naam);
+            localStorage.setItem('aangemeldePersonen', JSON.stringify(aangemeldePersonen));
+            alert('Bedankt voor het aanmelden!');
+        }
+    </script>
 </body>
 </html>
