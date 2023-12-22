@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aanmelden</title>
 </head>
+
 <body>
-    <h1>Aanmelden</h1>
-    <form onsubmit="handleFormSubmit(event)">
-        <label for="naam">Naam:</label>
-        <input type="text" id="naam" name="naam" required>
-        <button type="submit">Aanmelden</button>
-    </form>
-    <script>
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const naam = document.getElementById('naam').value;
-            let aangemeldePersonen = JSON.parse(localStorage.getItem('aangemeldePersonen')) || [];
-            aangemeldePersonen.push(naam);
-            localStorage.setItem('aangemeldePersonen', JSON.stringify(aangemeldePersonen));
-            alert('Bedankt voor het aanmelden!');
-        }
-    </script>
+    <main>
+        <h1>Aanmelden</h1>
+        <form action="contactform.php" method="post">
+            <input type="text" name="name" placeholder="Voor- en Achteraam">
+            <input type="text" name="mail" placeholder="Emailadres">
+            <input type="text" name="subject" placeholder="Onderwerp">
+            <textarea name="message" id="subjectTextarea" cols="30" rows="10" placeholder="Bericht"></textarea>
+            <button type="submit" name="submitButton">Verstuur mail</button>
+        </form>
+        </script>
 </body>
+</main>
+
 </html>
