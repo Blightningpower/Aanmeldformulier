@@ -3,7 +3,7 @@ if (isset($_POST['submitButton'])) {
     $name =$_POST['Voor- en Achternaam'];
     $subject =$_POST['onderwerp'];
     $mailFrom =$_POST['Emailadres'];
-    $mailTo = "Info@chalgado.com.com";
+    $mailTo = "Info@chalgado.com";
     $message =$_POST['Bericht'];
     $headers = "From: ".$mailFrom;
     $txt ="Je hebt een email ontvangen van ".$name.".\n\n".$message;
